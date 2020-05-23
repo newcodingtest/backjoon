@@ -3,8 +3,8 @@ import java.util.*;
 public class test {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        boolean run = true;
-        while(run){
+        boolean run = true;                        // WHILE 로 조건문에 해당하는 입력 
+        while(run){                     
             int i;
             int fac=1;
 
