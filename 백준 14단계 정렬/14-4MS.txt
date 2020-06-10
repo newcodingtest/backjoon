@@ -1,0 +1,78 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Main {
+	public static void main(String[] args) {
+		int num;
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+			num = Integer.parseInt(br.readLine());
+			int sum = 0;
+			int[] arr = new int[num];
+			for (int i = 0; i < num; i++) {
+				arr[i] = Integer.parseInt(br.readLine());
+				sum += arr[i];
+			}
+			Arrays.sort(arr);
+			System.out.println((int)Math.round((double)sum / arr.length));
+			System.out.println(sort1(arr));
+			System.out.println(choi(arr));
+			System.out.println(sort2(arr));
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static int choi(int[] arr) {
+		int[] cnt = new int[8001];
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int max = Integer.MIN_VALUE;
+		for(int x : arr) {
+			if(x<0) {
+				cnt[Math.abs(x) + 4000]++;
+			}else {
+				cnt[x]++;
+			}
+		}
+		int index = 0;
+		for(int i=0; i<cnt.length; i++) {
+			if(cnt[i]!=0 && cnt[i]>max) {		
+				max = cnt[i];
+				index = i;				
+			}
+		}
+		for(int i=0;i<cnt.length;i++) {
+			int x=i;
+			if(cnt[i]==max) { 
+				if(i>4000) { 
+					x-=4000;
+					x*=-1;
+					list.add(x); 
+				}else
+					list.add(i); 
+			}
+		}
+		Collections.sort(list); 
+		
+		if(list.size()>1) 
+			return list.get(1); 
+		else 
+			return list.get(0); 
+	}
+	public static int sort1(int[] arr) {
+		int result = arr[arr.length/2];
+		return result;
+	}
+	public static int sort2(int[] arr) {
+		int result;
+		if(arr.length == 1) {
+			result = 0;
+		}else {
+			result = (arr[0] - arr[arr.length - 1]) * -1;
+		}
+		return result;
+	}
+}
