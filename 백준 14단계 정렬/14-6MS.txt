@@ -1,0 +1,45 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+class Eq implements Comparable<Eq>{
+        int num1;
+        int num2;
+        
+        Eq(int num1, int num2) {
+            this.num1 = num1;
+            this.num2 = num2;
+        }
+        
+        @Override
+        public int compareTo(Eq o) {
+        	int cx = num1 - o.num1;
+            return (cx != 0) ? cx : num2 - o.num2;
+        }
+        public String toString() {
+        	return num1 +" "+ num2;
+        }
+}
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int size = Integer.parseInt(br.readLine());
+		Eq[] eq = new Eq[size];
+		for (int i = 0; i < size; i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+			int num1 = Integer.parseInt(st.nextToken());
+			int num2 = Integer.parseInt(st.nextToken());
+			eq[i] = new Eq(num1, num2);
+		}
+		Arrays.sort(eq);
+		for (Eq s : eq) {
+			System.out.println(s);
+		}
+	}
+}
