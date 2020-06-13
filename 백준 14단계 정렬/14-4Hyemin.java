@@ -2,11 +2,10 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // Wrong Answer
         BufferedWriter bf = new BufferedWriter(new OutputStreamWriter(System.out));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        int max = -3999;
+        int max = -4001;
         int min = 4001;
         int sum = 0;
         int feqCnt = 0;
@@ -20,11 +19,11 @@ public class Main {
             int num = Integer.parseInt(br.readLine());
             numbers[num + 4000]++;
             if (num > max) max = num;
-            if (num < min) min = num;
+            if (num <= min) min = num;
             sum += num;
         }
 
-        for (int i = 1; i <= 8000; i++) {
+        for (int i = 0; i <= 8000; i++) {
             if (numbers[i] > 0) {
                 int cenCntBefore = cenCnt;
                 cenCnt += numbers[i];
@@ -48,8 +47,7 @@ public class Main {
                 }
             }
         }
-
-        bf.write(Math.round((double)sum / (double)n) + "\n");
+        bf.write(Math.round(sum / (double)n) + "\n");
         bf.write(cenNum + "\n");
         bf.write(feqNum02 + "\n");
         bf.write((max - min) + "\n");
