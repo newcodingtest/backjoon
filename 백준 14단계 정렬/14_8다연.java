@@ -12,7 +12,8 @@ public class DY14_8 {
 		List<String> word = new ArrayList<String>(20001); 
 		for(int i =0; i<n; i++){ 
 			String temp= br.readLine(); 
-			if(!word.contains(temp)) word.add(temp); 
+			if(!word.contains(temp)) word.add(temp);
+			// if문이랑, 배열 20000 부분 수정 후 메모리, 시간 측정
 		} 
 		
 		Comparator<String> myComparator = new Comparator<String>() { 
