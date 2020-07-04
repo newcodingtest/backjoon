@@ -1,3 +1,4 @@
+// 24684KB, 140ms
 package week6;
 
 import java.io.BufferedReader;
@@ -14,14 +15,14 @@ public class DY15_4 {
 	static int m;
 	
 	private static void method(int cnt) throws IOException {
-		// throws IOException Ãß°¡
+		// throws IOException ì¶”ê°€
 		if(cnt==m) {
 			for(int i =0;i<m;i++) {
-				bw.write(String.valueOf(list[i])+" "); //String.valueOf ÀØÁö¸»±â
+				bw.write(String.valueOf(list[i])+" "); //String.valueOf ìžŠì§€ë§ê¸°
 			}
 			bw.write("method"+String.valueOf(cnt));
 			bw.newLine();
-			return; // return Ãß°¡ÇØ¼­ Á¾·á
+			return; // return ì¶”ê°€í•´ì„œ ì¢…ë£Œ
 		}
 		
 		for(int i=(cnt==0)?1:list[cnt-1];i<=n;i++) {
