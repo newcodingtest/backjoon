@@ -1,11 +1,12 @@
-// ÀÔ·Â : 3 1 or 4 2(N, M ¼ø ÀÔ·Â)
-// (1 ¡Â M ¡Â N ¡Â 7)
-// 1ºÎÅÍ N±îÁö ÀÚ¿¬¼ö Áß¿¡¼­ M°³¸¦ °í¸¥ ¼ö¿­
-// Ãâ·Â : 1ºÎÅÍ 3±îÁö ÀÚ¿¬¼ö Áß¿¡¼­ 1°³¸¦ °í¸¥ ¼ö¿­
+//282424KB, 752ms
+// ì…ë ¥ : 3 1 or 4 2(N, M ìˆœ ì…ë ¥)
+// (1 â‰¤ M â‰¤ N â‰¤ 7)
+// 1ë¶€í„° Nê¹Œì§€ ìì—°ìˆ˜ ì¤‘ì—ì„œ Mê°œë¥¼ ê³ ë¥¸ ìˆ˜ì—´
+// ì¶œë ¥ : 1ë¶€í„° 3ê¹Œì§€ ìì—°ìˆ˜ ì¤‘ì—ì„œ 1ê°œë¥¼ ê³ ë¥¸ ìˆ˜ì—´
 //1
 //2
 //3
-//Ãâ·Â2 : 1ºÎÅÍ 4±îÁö ÀÚ¿¬¼ö Áß¿¡¼­ 2°³¸¦ °í¸¥ ¼ö¿­
+//ì¶œë ¥2 : 1ë¶€í„° 4ê¹Œì§€ ìì—°ìˆ˜ ì¤‘ì—ì„œ 2ê°œë¥¼ ê³ ë¥¸ ìˆ˜ì—´
 //1 1
 //1 2
 //1 3
@@ -54,12 +55,12 @@ public class DY15_3 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		//InputStreamReader, OutputStreamWriter ¾Õ¿¡ new ÀÛ¼º ÀØÁö ¸»±â
+		//InputStreamReader, OutputStreamWriter ì•ì— new ì‘ì„± ìŠì§€ ë§ê¸°
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-		//1ºÎÅÍ N±îÁö MÀÇ ±æÀÌÀÇ ¸ğµç ¼ö¿­
+		//1ë¶€í„° Nê¹Œì§€ Mì˜ ê¸¸ì´ì˜ ëª¨ë“  ìˆ˜ì—´
 		
 		list = new int [M];
 		method(0);
