@@ -1,0 +1,27 @@
+package back;
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class dp6 {// 메모리;25356 시간;244
+	static int[][] tri;
+    static int N;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        N = Integer.parseInt(br.readLine()); // 삼각형 길이
+        tri = new int[N+1][N+1]; //삼각형 각 노드
+        int sum = 0;
+
+        for (int i = 1; i <= N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 1; j <= i; j++) {
+                tri[i][j] = Integer.parseInt(st.nextToken());
+
+                tri[i][j] = Math.max(tri[i][j] + tri[i-1][j], tri[i][j] + tri[i-1][j-1]);
+                sum = Math.max(tri[i][j], sum);
+            }
+        }
+        System.out.println(sum);
+    }
+}
