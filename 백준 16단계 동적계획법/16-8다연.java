@@ -12,14 +12,14 @@ public class DY16_8 {
 		int n = Integer.parseInt(br.readLine());
 		
 		int dp[] = new int[n+1];
-		// ¹è¼ö ¾Æ´Ñ °ÍÀº Á÷Àü ¹è¿­ °ª¿¡ +1
+		// ë°°ìˆ˜ ì•„ë‹Œ ê²ƒì€ ì§ì „ ë°°ì—´ ê°’ì— +1
 		for(int i=2;i<n+1;i++) {
 			dp[i] = dp[i-1] + 1;
 			if(i%2==0) dp[i] = Math.min(dp[i], dp[i/2]+1);
 			if(i%3==0) dp[i] = Math.min(dp[i], dp[i/3]+1);
 		}
 		
-		//2·Î ³ª´©´Â °Å¶û 1»©°í 3À¸·Î ³ª´©´Â °Å¶û ºñ±³
+		//2ë¡œ ë‚˜ëˆ„ëŠ” ê±°ë‘ 1ë¹¼ê³  3ìœ¼ë¡œ ë‚˜ëˆ„ëŠ” ê±°ë‘ ë¹„êµ
 		bw.write(String.valueOf(dp[n]));
 		bw.close();
 
