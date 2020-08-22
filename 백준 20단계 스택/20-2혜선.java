@@ -1,3 +1,4 @@
+//90392kB, 696ms, 527B
 import java.util.Scanner;
 import java.util.Stack;
 
